@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải ptb2</title>
+</head>
+<body>
+<b>Nhập số a </b><input id="a" type="text"><br><br>
+<b>Nhập số b </b><input id="b" type="text"><br><br>
+<b>Nhập số c </b><input id="c" type="text"><br><br>
+<button onclick="tinh()">Giải phương trình</button><br><br>
+<b id="x1"></b><br><br>
+<b id="x2"></b>
+<script>
+  function tinh(){
+      let a = +document.getElementById('a').value
+      let b = +document.getElementById('b').value
+      let c =+document.getElementById('c').value
+      let delta = b*b - 4*a*c
+      let x = -b/(2*a)
+      let x1 = (-b + Math.sqrt(delta))/2*a
+      let x2 = (-b - Math.sqrt(delta))/2*a
+      if (delta<0){
+          document.getElementById('x1').innerHTML = 'Phương trình vô nghiệm'
+      }else {
+          if (delta==0){
+              document.getElementById('x1').innerHTML = 'Phương trình có nghiệm x= '+ x
+          }else {
+              document.getElementById('x1').innerHTML = 'x1 = '+ x1
+              document.getElementById('x2').innerHTML = 'x2 = '+ x2
+          }
+      }
+  }
+
+</script>
+</body>
+</html>
